@@ -1,1 +1,247 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vilascar — Taller de Chapa y Pintura en Leganés</title>
+<meta name="description" content="Vilascar: más de 30 años de experiencia en chapa y pintura en Leganés. Calidad, profesionalidad y precios justos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1a1a2e;--accent:#e94560;--accent2:#0f3460;--light:#f5f5f5;--white:#fff;--gray:#6b7280;--dark:#111827}
+body{font-family:'Inter',sans-serif;color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.95);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:1.5rem;font-weight:800;color:var(--white);letter-spacing:1px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);font-weight:500;font-size:.95rem;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--white);padding:.6rem 1.5rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(233,69,96,.4)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--primary) 0%,var(--accent2) 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-badge{display:inline-block;background:rgba(233,69,96,.15);color:var(--accent);padding:.5rem 1.2rem;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(233,69,96,.3)}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:var(--white);margin-bottom:1rem;line-height:1.1}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 2.5rem}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.9rem 2rem;border-radius:10px;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:var(--accent);color:var(--white)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(233,69,96,.4)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;padding:4rem 2rem;max-width:1100px;margin:-3rem auto 0;position:relative;z-index:2;background:var(--white);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.stat{text-align:center}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent);display:block}
+.stat-label{color:var(--gray);font-size:.9rem;margin-top:.3rem}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title h2{font-size:2.2rem;font-weight:800;margin-bottom:.5rem}
+.section-title p{color:var(--gray);font-size:1.05rem}
+.section-title .line{width:60px;height:4px;background:var(--accent);margin:.8rem auto 0;border-radius:2px}
+
+/* SERVICES */
+.services{background:var(--light)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.service-card{background:var(--white);padding:2.5rem 2rem;border-radius:16px;transition:transform .3s,box-shadow .3s;border:1px solid #e5e7eb}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.service-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--accent),#ff6b6b);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.2rem}
+.service-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
+.service-card p{color:var(--gray);font-size:.95rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img{background:linear-gradient(135deg,var(--primary),var(--accent2));border-radius:20px;height:400px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:5rem;position:relative;overflow:hidden}
+.about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(233,69,96,.2))}
+.about-content h2{font-size:2rem;font-weight:800;margin-bottom:1rem}
+.about-content p{color:var(--gray);margin-bottom:1rem;font-size:1rem}
+.about-features{list-style:none;margin-top:1.5rem}
+.about-features li{padding:.6rem 0;display:flex;align-items:center;gap:.8rem;font-weight:500}
+.about-features li::before{content:'✓';background:var(--accent);color:var(--white);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+
+/* REVIEWS */
+.reviews{background:var(--light)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.review-card{background:var(--white);padding:2rem;border-radius:16px;border:1px solid #e5e7eb}
+.review-stars{color:#fbbf24;font-size:1.2rem;margin-bottom:1rem}
+.review-card p{color:var(--gray);font-style:italic;font-size:.95rem;margin-bottom:1rem}
+.review-author{font-weight:600;font-size:.9rem}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--primary),var(--accent2));text-align:center;color:var(--white);padding:5rem 2rem}
+.cta-section h2{font-size:2.5rem;font-weight:800;margin-bottom:1rem}
+.cta-section p{font-size:1.1rem;opacity:.8;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:3rem 2rem}
+footer .footer-brand{font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+footer p{font-size:.9rem}
+
+/* GLASURIT BADGE */
+.glasurit-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);padding:.5rem 1rem;border-radius:8px;margin-top:1.5rem;font-size:.85rem;color:rgba(255,255,255,.7)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .about-img{height:250px}
+  .stats{margin-top:-2rem;grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">VILA<span>SCAR</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="tel:+34916935050" class="nav-cta">📞 Llámanos</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">🏆 Más de 30 años en Leganés</span>
+    <h1>Tu taller de <span>Chapa y Pintura</span> de confianza</h1>
+    <p>Reparamos tu vehículo con la máxima calidad, repuestos originales y pintura de fábrica. Acabado perfecto garantizado.</p>
+    <div class="hero-buttons">
+      <a href="tel:+34916935050" class="btn btn-primary">📞 Pedir Presupuesto</a>
+      <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+    </div>
+    <div class="glasurit-badge">🎨 Taller certificado Glasurit — Pintura premium BASF</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-number">30+</span><span class="stat-label">Años de experiencia</span></div>
+  <div class="stat"><span class="stat-number">⭐ 4.8</span><span class="stat-label">Valoración en Google</span></div>
+  <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Repuesto original</span></div>
+  <div class="stat"><span class="stat-number">∞</span><span class="stat-label">Clientes satisfechos</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nuestros Servicios</h2>
+      <p>Soluciones profesionales para dejar tu vehículo como nuevo</p>
+      <div class="line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Chapa</h3>
+        <p>Reparación de golpes, abolladuras y daños estructurales con las técnicas más avanzadas del sector.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Pintura</h3>
+        <p>Pintura de fábrica Glasurit (BASF) para un acabado perfecto, igualando el color original de tu vehículo.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Reparación integral</h3>
+        <p>Nos encargamos de todo: peritaje, gestión con tu aseguradora y reparación completa de siniestros.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Acabados Premium</h3>
+        <p>Máximos controles de calidad para un resultado duradero en el tiempo. Tu coche como recién salido de fábrica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">🚘</div>
+      <div class="about-content">
+        <h2>Más de 30 años cuidando tu vehículo</h2>
+        <p>En Vilascar llevamos tres décadas ofreciendo un servicio de chapa y pintura de máxima calidad en Leganés. Nuestro equipo de profesionales altamente cualificados trabaja con las técnicas más actuales y los últimos avances del sector.</p>
+        <p>Estamos comprometidos con el medio ambiente y con la satisfacción total de nuestros clientes.</p>
+        <ul class="about-features">
+          <li>Atención personalizada y trato cercano</li>
+          <li>Precios justos y transparentes</li>
+          <li>Pintura de fábrica Glasurit (BASF)</li>
+          <li>Repuestos originales garantizados</li>
+          <li>Comprometidos con el medio ambiente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="opiniones">
+  <div class="container">
+    <div class="section-title">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Opiniones reales de Google</p>
+      <div class="line"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Súper profesionales dejando un acabado perfecto en las piezas reparadas y pintadas. Muy contento con vosotros, gracias."</p>
+        <span class="review-author">— Cliente Google</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Mi padre tuvo un accidente y se portaron fenomenal. Trato humano, profesionalidad, acabado perfecto y excelente relación calidad-precio."</p>
+        <span class="review-author">— Cliente Google</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Grandes profesionales y trato inmejorable. Cumplieron con el plazo. Estoy encantada con el resultado. Mil gracias."</p>
+        <span class="review-author">— Cliente Google</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Equipo muy profesional, resultados impecables y buen trato personalizado. Relación calidad-precio excelente."</p>
+        <span class="review-author">— Cliente Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <h2>¿Tu coche necesita una reparación?</h2>
+  <p>Pide presupuesto sin compromiso. Te atendemos en nuestro taller de Leganés.</p>
+  <div class="cta-buttons">
+    <a href="tel:+34916935050" class="btn btn-primary">📞 Llamar Ahora</a>
+    <a href="https://wa.me/34916935050" class="btn btn-outline" target="_blank">💬 WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">VILASCAR</div>
+  <p>Taller de Chapa y Pintura · Leganés, Madrid</p>
+  <p style="margin-top:.5rem;font-size:.8rem">© 2026 Vilascar. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
