@@ -1,1 +1,103 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propuesta para Maromotor — Automatizar.net</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F3F4F6;color:#111827;line-height:1.6}
+.hero{background:#111827;color:#fff;padding:60px 20px;text-align:center}
+.hero h1{font-size:1.8rem;margin-bottom:8px;font-weight:700}
+.hero p{color:#9CA3AF;font-size:1rem;max-width:600px;margin:0 auto}
+.badge{display:inline-block;background:#4F46E5;color:#fff;padding:4px 14px;border-radius:20px;font-size:0.85rem;margin-bottom:16px}
+.container{max-width:640px;margin:0 auto;padding:30px 20px}
+.card{background:#fff;border-radius:12px;padding:28px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.card h2{font-size:1.2rem;margin-bottom:12px;color:#111827}
+.card p{color:#4B5563;margin-bottom:10px}
+.highlight{background:#EEF2FF;border-left:4px solid #4F46E5;padding:16px;border-radius:8px;margin-bottom:16px}
+.highlight strong{color:#3730A3}
+.highlight p{color:#3730A3;margin:0}
+.list{list-style:none;padding:0}
+.list li{padding:8px 0;padding-left:28px;position:relative;color:#4B5563}
+.list li::before{content:"✓";position:absolute;left:0;color:#4F46E5;font-weight:700}
+.price{text-align:center;padding:20px;background:#F3F4F6;border-radius:8px;margin:16px 0}
+.price .amount{font-size:2rem;font-weight:800;color:#4F46E5}
+.price .period{color:#6B7280}
+.btn-main{display:block;width:100%;padding:16px;background:#4F46E5;color:#fff;border:none;border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;text-align:center;transition:background 0.2s}
+.btn-main:hover{background:#4338CA}
+.btn-disabled{background:#9CA3AF;cursor:not-allowed}
+.btn-disabled:hover{background:#9CA3AF}
+.success-msg{display:none;text-align:center;padding:20px;background:#ECFDF5;border-radius:8px;color:#065F46;font-weight:500}
+.domain-note{text-align:center;padding:14px 20px;background:#FFFBEB;border-radius:8px;color:#92400E;font-size:0.9rem;margin-top:12px}
+.footer{text-align:center;padding:30px 20px;color:#9CA3AF;font-size:0.85rem}
+.footer a{color:#4F46E5;text-decoration:none}
+iframe.hidden-frame{display:none}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="badge">🎁 Propuesta web personalizada</div>
+<h1>Maromotor</h1>
+<p>Santander — ⭐ 5.0 en Google</p>
+</div>
+<div class="container">
+<div class="card">
+<div class="highlight">
+<strong>🚀 Somos Automatizar.net</strong>
+<p>Creamos webs profesionales para negocios como el tuyo — rápidas, modernas y sin complicaciones.</p>
+</div>
+<h2>¿Qué incluye tu web?</h2>
+<ul class="list">
+<li>Diseño responsive profesional y personalizado</li>
+<li>HTML puro — sin cookies, sin RGPD, sin mantenimiento</li>
+<li>Carga ultrarrápida (sin base de datos)</li>
+<li>SSL incluido, hosting gestionado</li>
+<li>Soporte incluido todo el año</li>
+<li>QR para carta digital o servicios (¡gratis!)</li>
+</ul>
+<div class="price">
+<div class="amount">67 €<small>+IVA</small></div>
+<div class="period">al año · todo incluido</div>
+</div>
+<p style="color:#6B7280;font-size:0.9rem;text-align:center">Frente a los 200-500 €/año de WordPress con hosting, plugins y mantenimiento.</p>
+</div>
+<div class="card" style="text-align:center">
+<h2>¿Quieres ver cómo quedaría tu nueva web?</h2>
+<p>Pulsa el botón y en unos minutos recibirás por email una previsualización personalizada de tu web.</p>
+<form id="leadForm" action="https://webhook.automatizar.net:9742/lead-request" method="POST" target="hidden-frame">
+<input type="hidden" name="lead_id" value="e5530b84-828d-4946-992d-e3fa9ea7fd81">
+<input type="hidden" name="name" value="Maromotor">
+<input type="hidden" name="city" value="Santander">
+<input type="hidden" name="email" value="maromotor2024@gmail.com">
+<input type="hidden" name="line" value="L2">
+<input type="hidden" name="website" value="http://www.maromotor.es/">
+<button type="submit" class="btn-main" id="submitBtn">Quiero ver mi nueva web</button>
+</form>
+<div class="success-msg" id="successMsg">
+✅ ¡Solicitud recibida!<br>En unos minutos recibirás por email una previsualización de lo que podría ser tu nueva web. Podrás revisarla y solicitar cambios.
+</div>
+<div class="domain-note">
+📌 Te ayudamos a trasladar tu dominio a nuestro proveedor para automatizarlo todo y que no tengas que preocuparte de nada. El coste del dominio no está incluido en la suscripción de 67€/año.
+</div>
+<iframe name="hidden-frame" class="hidden-frame"></iframe>
+</div>
+</div>
+<div class="footer">
+<p>Automatizar SL · <a href="https://automatizar.net">automatizar.net</a></p>
+<p>Juan García · webs@automatizar.net</p>
+</div>
+<script>
+document.getElementById('leadForm').addEventListener('submit',function(){
+var btn=document.getElementById('submitBtn');
+btn.textContent='Enviando...';
+btn.classList.add('btn-disabled');
+btn.disabled=true;
+setTimeout(function(){
+document.getElementById('leadForm').style.display='none';
+document.getElementById('successMsg').style.display='block';
+},1500);
+});
+</script>
+</body>
+</html>
