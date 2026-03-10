@@ -1,1 +1,139 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatizar.net para Marcela Prado</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:#fafafa;}
+.container{max-width:1000px;margin:0 auto;padding:0 20px;}
+.hero{background:linear-gradient(135deg,#d4a5a5 0%,#9d7b7b 100%);color:#fff;padding:60px 20px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);animation:pulse 15s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+.hero-photo{width:100%;max-width:600px;height:300px;object-fit:cover;border-radius:12px;margin:20px auto;box-shadow:0 10px 40px rgba(0,0,0,0.3);border:4px solid #fff;}
+.hero h1{font-size:2.5em;margin-bottom:15px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+.hero p{font-size:1.3em;margin-top:10px;opacity:0.95;}
+.logo-hero{width:80px;height:80px;border-radius:50%;border:3px solid #fff;margin:0 auto 20px;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.rating{font-size:1.4em;margin:15px 0;display:flex;align-items:center;justify-content:center;gap:8px;}
+.stars{color:#ffd700;letter-spacing:3px;}
+.section{padding:60px 20px;background:#fff;}
+.section:nth-child(even){background:#f9f9f9;}
+.section h2{text-align:center;font-size:2.2em;margin-bottom:40px;color:#6b4f4f;position:relative;padding-bottom:15px;}
+.section h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,#d4a5a5,#9d7b7b);border-radius:2px;}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:30px;}
+.service-card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s,box-shadow 0.3s;border-top:4px solid #d4a5a5;}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,0.15);}
+.service-card h3{font-size:1.5em;margin-bottom:15px;color:#6b4f4f;display:flex;align-items:center;gap:10px;}
+.service-card p{color:#666;margin-bottom:20px;font-size:1.05em;}
+.service-card button{width:100%;padding:14px 24px;background:linear-gradient(135deg,#d4a5a5 0%,#9d7b7b 100%);color:#fff;border:none;border-radius:8px;font-size:1.1em;font-weight:600;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 12px rgba(157,123,123,0.3);}
+.service-card button:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(157,123,123,0.4);}
+.service-card button:active{transform:scale(0.98);}
+.about{text-align:center;max-width:700px;margin:0 auto;}
+.about p{font-size:1.2em;color:#555;line-height:1.8;}
+.contact{text-align:center;}
+.contact-buttons{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px;}
+.contact-buttons a{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-size:1.1em;font-weight:600;transition:all 0.3s;box-shadow:0 4px 12px rgba(37,211,102,0.3);}
+.contact-buttons a:nth-child(2){background:#6b4f4f;}
+.contact-buttons a:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.footer{background:#2d2d2d;color:#fff;text-align:center;padding:30px 20px;font-size:0.95em;}
+.footer p{opacity:0.9;}
+@media(max-width:600px){
+.hero h1{font-size:1.8em;}
+.hero p{font-size:1.1em;}
+.section h2{font-size:1.7em;}
+.services{grid-template-columns:1fr;}
+.contact-buttons{flex-direction:column;align-items:stretch;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<img src="https://lh3.googleusercontent.com/-40ENOV3DvaA/AAAAAAAAAAI/AAAAAAAAAAA/3lDUdaxYuog/s44-p-k-no-ns-nd/photo.jpg" alt="Logo Marcela Prado" class="logo-hero">
+<h1>¡Hola, Marcela Prado! 👋</h1>
+<div class="rating">
+<span class="stars">⭐⭐⭐⭐⭐</span>
+<span>5.0</span>
+</div>
+<img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo_lv2lI9js4VoBq2ApeHd3t52FbDeSmhVzOVYrwbGIYtVZ6MRCsUgHYW2EK5xR07-dzJPobT6eHshmOr5sB8q1L6mQdR4iFVZw186s5NKU-uRWgvp8CSpu6-sH8hSr_mFG_2BC=w800-h500-k-no" alt="La Tienda de Marcela Prado" class="hero-photo">
+<p>Somos <strong>Automatizar.net</strong> y tenemos algo especial para ti</p>
+</div>
+
+<div class="section">
+<div class="container">
+<h2>Servicios Diseñados para Tu Tienda</h2>
+<div class="services">
+
+<div class="service-card">
+<h3><span>🌐</span> Web Profesional</h3>
+<p>Dale a tu tienda de moda una presencia online moderna y elegante por solo <strong>67€/año</strong>. Sin cookies, sin RGPD, ultrarrápida y optimizada para móviles.</p>
+<button onclick="solicitarServicio(this, 'https://n8n.automatizar.net/webhook/lead-request?id=5aafc984-38af-49c3-bc7c-b4164ef8b520&servicio=web')">La quiero</button>
+</div>
+
+<div class="service-card">
+<h3><span>⭐</span> QR de Reseñas Google</h3>
+<p>Pegatina con código QR para que tus clientas dejen reseñas en Google Maps fácilmente. <strong>Gratis y sin compromiso</strong>. Aumenta tu reputación online.</p>
+<button onclick="solicitarServicio(this, 'https://n8n.automatizar.net/webhook/lead-request?id=5aafc984-38af-49c3-bc7c-b4164ef8b520&servicio=qr-resenas')">Lo quiero</button>
+</div>
+
+<div class="service-card">
+<h3><span>📱</span> Automatizaciones</h3>
+<p>Conectamos tu web con tu CRM, base de datos de clientas o servicios externos. Ahorra tiempo y gestiona tu negocio de forma inteligente.</p>
+<button onclick="solicitarServicio(this, 'https://n8n.automatizar.net/webhook/lead-request?id=5aafc984-38af-49c3-bc7c-b4164ef8b520&servicio=automatizaciones')">Me interesa</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="container about">
+<h2>Sobre Nosotros</h2>
+<p><strong>Automatizar.net</strong> ayuda a negocios locales como el tuyo a digitalizarse sin complicaciones ni costes abusivos. Sabemos lo importante que es para una tienda de moda destacar online, y estamos aquí para hacerlo simple y asequible.</p>
+</div>
+</div>
+
+<div class="section">
+<div class="container contact">
+<h2>¿Hablamos?</h2>
+<p style="font-size:1.15em;color:#666;margin-bottom:20px;">Estamos aquí para ayudarte. Escríbenos por WhatsApp o email.</p>
+<div class="contact-buttons">
+<a href="https://wa.me/34634426565" target="_blank">
+<span>📱</span> WhatsApp: +34 634 42 65 65
+</a>
+<a href="mailto:info@automatizar.net">
+<span>✉️</span> info@automatizar.net
+</a>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<div class="container">
+<p>Propuesta personalizada para <strong>Marcela Prado</strong> · Automatizar.net</p>
+<p style="margin-top:10px;font-size:0.9em;opacity:0.7;">Torrelavega, Cantabria · C. Mártires, 2</p>
+</div>
+</div>
+
+<script>
+async function solicitarServicio(btn, url) {
+btn.disabled = true;
+btn.style.opacity = '0.7';
+btn.textContent = 'Enviando...';
+try {
+await fetch(url, {mode:'no-cors'});
+btn.textContent = '✅ ¡Solicitud enviada!';
+btn.style.background = '#22c55e';
+btn.style.opacity = '1';
+} catch(e) {
+btn.textContent = '❌ Error, inténtalo de nuevo';
+btn.style.background = '#ef4444';
+btn.style.opacity = '1';
+btn.disabled = false;
+}
+}
+</script>
+
+</body>
+</html>
