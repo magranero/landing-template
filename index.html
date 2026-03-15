@@ -1,1 +1,512 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Areafit Buganvillas - Gimnasio en Arrecife con las mejores instalaciones, sala de musculación, zona cardio, clases fitness y mucho más. ¡Entrena con nosotros!">
+    <title>Areafit Buganvillas - Gimnasio en Arrecife | Tu Centro Fitness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            background: linear-gradient(135deg, rgba(230, 0, 126, 0.9), rgba(0, 0, 0, 0.7)), 
+                        url('https://static.wixstatic.com/media/055ac8_a65baf5a04c44103990985f68e5095b1~mv2.jpg/v1/fill/w_1280,h_530,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/055ac8_a65baf5a04c44103990985f68e5095b1~mv2.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #E6007E;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 0, 126, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background: #c00069;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(230, 0, 126, 0.6);
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #222;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #E6007E, #FF4081);
+            border-radius: 2px;
+        }
+        
+        .about {
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #E6007E;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(230, 0, 126, 0.2);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #E6007E;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery {
+            background: #f9f9f9;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .rating {
+            background: white;
+            text-align: center;
+        }
+        
+        .stars {
+            font-size: 2.5rem;
+            color: #FFB800;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #E6007E;
+            margin-bottom: 0.5rem;
+        }
+        
+        .schedule {
+            background: #f9f9f9;
+        }
+        
+        .schedule-table {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .schedule-row {
+            display: flex;
+            padding: 18px 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-row:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .schedule-day {
+            font-weight: 700;
+            color: #E6007E;
+            flex: 1;
+        }
+        
+        .schedule-time {
+            color: #666;
+            flex: 1;
+            text-align: right;
+        }
+        
+        .contact {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 25px;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3rem;
+            color: #E6007E;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .contact-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .contact-item a {
+            color: #E6007E;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #c00069;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .floating-phone {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #E6007E;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(230, 0, 126, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .floating-phone:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(230, 0, 126, 0.6);
+        }
+        
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        footer a {
+            color: #E6007E;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #FF4081;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .floating-phone {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Areafit Buganvillas</h1>
+            <p>Tu Gimnasio en el C.C. Buganvillas, Arrecife</p>
+            <a href="tel:602421689" class="cta-button">¡Apúntate Ya!</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2>Sobre Nosotros</h2>
+        <div class="about-content">
+            <p><strong>Areafit Buganvillas</strong> es un enorme y lujoso centro fitness situado en el C.C. Comercial Buganvillas de Arrecife, muy cerca de la playa. Contamos con instalaciones modernas y una terraza para poder entrenar al aire libre, ofreciendo una experiencia única en Lanzarote.</p>
+            <p>Nuestro gimnasio cuenta con una <strong>sala fitness y musculación enorme</strong> equipada con el mejor material profesional del mercado. Disponemos de una amplia zona de cardio donde puedes disfrutar de una enorme oferta de entretenimiento digital mientras andas o corres, con cintas de correr con televisión, elípticas de varios tipos, bicicletas y otras máquinas para llevar tu cuerpo a su estado aeróbico.</p>
+            <p>En Areafit Buganvillas apostamos por una oferta muy abundante de máquinas sectorizadas, con más de cuatro decenas para que no tengas que esperar. Contamos con estaciones de cables y cruces de polea, máquinas de palanca, zona de bancos y press, prensas y piernas, mancuernas, barras y una completa zona de abdominales y estiramientos.</p>
+            <p>Además, disponemos de una zona repleta de sacos de boxeo donde se imparten clases de boxing, vestuarios completos con duchas, taquillas, jabón y secadores de pelo a tu disposición cada día.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💪</div>
+                <h3>Sala de Musculación</h3>
+                <p>Zona de fuerza completa con máquinas sectorizadas, cables, poleas, máquinas de palanca, bancos, press y zona de peso libre con mancuernas y barras olímpicas.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏃</div>
+                <h3>Zona Cardio</h3>
+                <p>Amplia zona de cardio con cintas de correr con televisión, elípticas, bicicletas y máquinas variadas para tu entrenamiento aeróbico con entretenimiento digital.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🥊</div>
+                <h3>Area Boxing</h3>
+                <p>Zona repleta de sacos de boxeo donde se imparten clases dinámicas de boxing para mejorar tu condición física y liberar energía.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏋️</div>
+                <h3>Strenght XXXL</h3>
+                <p>Zona exclusiva de pura fuerza con prensas, squat racks, jacas, glúteos, hip-thrust y máquinas especializadas para el tren inferior en peso libre.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌴</div>
+                <h3>Terraza Exterior</h3>
+                <p>Disfruta de nuestra terraza única para entrenar al aire libre cerca de la playa. Espacio perfecto para ejercicios funcionales y calistenia.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Vestuarios Completos</h3>
+                <p>Vestuarios equipados con duchas, taquillas para uso diario, jabón y secadores de pelo. Todo lo necesario para tu comodidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Nuestras Instalaciones</h2>
+        <div class="gallery-grid">
+            <img src="https://static.wixstatic.com/media/055ac8_d96daeb85719445aa2b39f94179bfd5c~mv2.jpg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_d96daeb85719445aa2b39f94179bfd5c~mv2.jpg" alt="Instalaciones Areafit Buganvillas" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_93c7c398c91c4f0ebdf4079f7ce303db~mv2.jpg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_93c7c398c91c4f0ebdf4079f7ce303db~mv2.jpg" alt="Zona de musculación" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_43c172fccae84a6ebb948cf3ef857cf9~mv2.jpg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_43c172fccae84a6ebb948cf3ef857cf9~mv2.jpg" alt="Máquinas de cardio" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_d558a89334764d23bfd73fbfa8284612~mv2.jpg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_d558a89334764d23bfd73fbfa8284612~mv2.jpg" alt="Zona de peso libre" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_574ec79e7b714ceda93f76760b63937b~mv2.jpg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_574ec79e7b714ceda93f76760b63937b~mv2.jpg" alt="Sala de fitness" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_3fbda8a437a341b0abcbf86515fedb68~mv2.jpeg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_3fbda8a437a341b0abcbf86515fedb68~mv2.jpeg" alt="Equipamiento profesional" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_6aadc66e740a4d15b96e689250b574cd~mv2.jpeg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_6aadc66e740a4d15b96e689250b574cd~mv2.jpeg" alt="Zona de entrenamiento" loading="lazy">
+            <img src="https://static.wixstatic.com/media/055ac8_a9a59ea8b7474e6b8cecc3d2ea413fca~mv2.jpeg/v1/fill/w_320,h_320,q_90,enc_avif,quality_auto/055ac8_a9a59ea8b7474e6b8cecc3d2ea413fca~mv2.jpeg" alt="Instalaciones modernas" loading="lazy">
+        </div>
+    </section>
+
+    <section class="rating">
+        <h2>Valoración de Nuestros Clientes</h2>
+        <div class="stars">★★★★☆</div>
+        <div class="rating-number">4.2</div>
+        <p style="color: #666; font-size: 1.1rem;">Valoración media en Google</p>
+    </section>
+
+    <section class="schedule">
+        <h2>Horario de Apertura</h2>
+        <div class="schedule-table">
+            <div class="schedule-row">
+                <div class="schedule-day">Lunes a Viernes</div>
+                <div class="schedule-time">7:00 - 23:00</div>
+            </div>
+            <div class="schedule-row">
+                <div class="schedule-day">Sábados</div>
+                <div class="schedule-time">8:00 - 14:00</div>
+            </div>
+            <div class="schedule-row">
+                <div class="schedule-day">Domingos y Festivos</div>
+                <div class="schedule-time">Cerrado</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Ubicación y Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h3>📍 Dirección</h3>
+                <p>Calle Manolo Millares S/N<br>C.C. Comercial Buganvillas<br>Arrecife, Lanzarote</p>
+            </div>
+            <div class="contact-item">
+                <h3>📞 Teléfono</h3>
+                <p><a href="tel:602421689">602 421 689</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>🌐 Síguenos</h3>
+                <p>
+                    <a href="https://www.facebook.com/areafitmontequinto" target="_blank" rel="noopener">Facebook</a> · 
+                    <a href="https://www.instagram.com/areafitaleste/" target="_blank" rel="noopener">Instagram</a>
+                </p>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Calle+Manolo+Millares+C.C.+Buganvillas+Arrecife+Lanzarote&output=embed" width="100%" height="400" style="border:0" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <a href="tel:602421689" class="floating-phone" aria-label="Llamar ahora">📞</a>
+
+    <footer>
+        <p>&copy; 2024 Areafit Buganvillas · C.C. Comercial Buganvillas, Arrecife · Tel: <a href="tel:602421689">602 421 689</a></p>
+        <p style="font-size: 0.9rem; margin-top: 15px;">Web creada por <a href="https://automatizar.net" target="_blank" rel="noopener">Automatizar.net</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GymAndFitnessCenter",
+        "name": "Areafit Buganvillas",
+        "image": "https://static.wixstatic.com/media/055ac8_a65baf5a04c44103990985f68e5095b1~mv2.jpg/v1/fill/w_1280,h_530,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/055ac8_a65baf5a04c44103990985f68e5095b1~mv2.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Manolo Millares S/N, C.C. Comercial Buganvillas",
+            "addressLocality": "Arrecife",
+            "addressRegion": "Lanzarote",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34602421689",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:00",
+                "closes": "23:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "08:00",
+                "closes": "14:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.2",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "sameAs": [
+            "https://www.facebook.com/areafitmontequinto",
+            "https://www.instagram.com/areafitaleste/"
+        ]
+    }
+    </script>
+</body>
+</html>
