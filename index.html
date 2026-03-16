@@ -1,1 +1,594 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental Sonrisalud Tudela | Especialistas en Ortodoncia e Implantes</title>
+    <meta name="description" content="Clínica Dental Sonrisalud en Tudela. Especialistas en ortodoncia invisible, implantes dentales, estética dental y periodoncia. Primera consulta gratuita. ☎ 948 14 72 29">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 150, 199, 0.95), rgba(0, 120, 179, 0.95)), url('https://www.sonrisalud.es/wp-content/uploads/2020/07/como-eliminar-las-manchas-de-los-dientes-sonrisa-650x650.png') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: #fff;
+            color: #0096c7;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 0.5rem;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #f0f0f0;
+        }
+        
+        .rating-badge {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: #0096c7;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about {
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,150,199,0.2);
+        }
+        
+        .feature h3 {
+            color: #0096c7;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .services {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #0096c7, #0078b3);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,150,199,0.3);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .reviews {
+            background: #f9f9f9;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #0096c7;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .review-stars {
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
+        
+        .review-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .contact-info h3 {
+            color: #0096c7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #0096c7;
+        }
+        
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            color: #0096c7;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0096c7;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(0,150,199,0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .cta-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0,150,199,0.6);
+        }
+        
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #0096c7;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-float {
+                bottom: 1rem;
+                right: 1rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Clínica Dental Sonrisalud Tudela",
+        "image": "https://www.sonrisalud.es/wp-content/uploads/2020/07/como-eliminar-las-manchas-de-los-dientes-sonrisa-650x650.png",
+        "telephone": "+34948147229",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tudela",
+            "addressCountry": "ES"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "bestRating": "5",
+            "ratingCount": "6"
+        },
+        "url": "http://www.sonrisalud.es/",
+        "priceRange": "€€",
+        "medicalSpecialty": ["Dentistry", "Orthodontics", "Cosmetic Dentistry", "Periodontics"]
+    }
+    </script>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Clínica Dental Sonrisalud Tudela</h1>
+            <p>Especialistas en Ortodoncia Invisible e Implantes Dentales</p>
+            <a href="tel:+34948147229" class="cta-primary">☎ Llama Ahora</a>
+            <a href="#contacto" class="cta-primary">Pedir Cita Gratuita</a>
+            <div class="rating-badge">
+                <div class="stars">★★★★★</div>
+                <strong>4.8 estrellas</strong> en Google
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Más de 20 años cuidando de tu sonrisa</h2>
+            <p class="subtitle">En Sonrisalud no vendemos tratamientos dentales, atendemos y cuidamos la salud de personas con nombres y apellidos</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Somos una clínica dental en Tudela comprometida con la excelencia en el cuidado bucodental. Con más de 20 años de experiencia, nuestro equipo de profesionales especializados trabaja para ofrecerte los mejores tratamientos en ortodoncia invisible, implantología, estética dental y periodoncia.</p>
+                    <p>Nos alejamos de modelos empresariales para centrarnos en lo que realmente importa: tu salud y bienestar. Por eso ofrecemos una primera consulta completamente gratuita, donde valoramos tu caso de forma personalizada y te proponemos el tratamiento que mejor se adapta a tus necesidades.</p>
+                    <p>Nuestras instalaciones están totalmente digitalizadas y equipadas con tecnología de vanguardia, incluyendo sistemas de diagnóstico 3D que nos permiten realizar tratamientos más precisos y seguros. Además, ofrecemos financiación flexible para que el cuidado de tu salud bucodental esté siempre a tu alcance.</p>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <h3>🏆 Experiencia y profesionalidad</h3>
+                    <p>Más de 20 años cuidando de nuestros pacientes con los mejores resultados.</p>
+                </div>
+                <div class="feature">
+                    <h3>✨ Calidad y garantía</h3>
+                    <p>Ofrecemos la mayor calidad en atención sanitaria y tratamientos garantizados.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔬 Tecnología avanzada</h3>
+                    <p>Sistemas de diagnóstico 3D y tecnología de vanguardia. Clínicas totalmente digitalizadas.</p>
+                </div>
+                <div class="feature">
+                    <h3>💳 Facilidades de pago</h3>
+                    <p>Financiación a medida adaptada a tus necesidades con las mejores condiciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Nuestros Tratamientos</h2>
+            <p class="subtitle">Soluciones profesionales para cada necesidad bucodental</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">😁</div>
+                    <h3>Ortodoncia Invisible</h3>
+                    <p>Sistema de alineadores invisibles para conseguir una sonrisa perfecta. ¡Nadie sabrá que lo llevas! Tratamiento cómodo, estético y efectivo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🦷</div>
+                    <h3>Implantes Dentales</h3>
+                    <p>Técnica de cirugía guiada mínimamente invasiva. Dientes en un día: extraemos la pieza dañada y colocamos el implante en una sola sesión.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">✨</div>
+                    <h3>Estética Dental</h3>
+                    <p>Diseño de sonrisa personalizado, blanqueamiento dental premium y carillas dentales. Cambiamos color, tamaño y forma para lograr armonía con tu rostro.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🩺</div>
+                    <h3>Periodoncia</h3>
+                    <p>Cuidado especializado de tus encías. Unas encías sanas favorecen una sonrisa bonita y una mejor salud bucodental.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔧</div>
+                    <h3>Prótesis Dentales</h3>
+                    <p>Desde materiales combinados de metal y cerámica hasta porcelana e innovador zirconio. Soluciones a medida para cada paciente.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💙</div>
+                    <h3>Otros Tratamientos</h3>
+                    <p>Endodoncias, férulas para bruxismo, extracciones, obturaciones, incrustaciones y reconstrucciones. Cuidamos de tu salud integral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2>Opiniones de Nuestros Pacientes</h2>
+            <p class="subtitle">La satisfacción de nuestros pacientes es nuestra mejor carta de presentación</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">M</div>
+                        <div>
+                            <div class="review-author">Miguel Peri</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">Muy recomendable, profesionales y atentos. Atendieron problemas con la boca de mi hijo. Muy satisfecho con su trabajo.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div>
+                            <div class="review-author">Ana Ibarra</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">De lo mejor que hay en TUDELA. Profesionales de verdad, puntualidad, trato super amable, precios lógicos. Los recomiendo.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div>
+                            <div class="review-author">Asier Munarriz</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">Fui por una urgencia y la verdad es que me quedé sorprendido por la calidad con la que me atendieron. Ya tengo una cita para valorar unos implantes.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">M</div>
+                        <div>
+                            <div class="review-author">Made & One</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">Encantada con la atención. Le tengo pánico al dentista y el dentista Hugo y Marisol me hacen sentir muy segura. Mil gracias ❤️ Se los recomiendo.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">H</div>
+                        <div>
+                            <div class="review-author">Hector L</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">Gran trabajo. Me han devuelto la sonrisa.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div>
+                            <div class="review-author">Abdelali Ankour</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">Muy buen trato respecto de todo el personal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>Pide tu Primera Consulta Gratuita</h2>
+            <p class="subtitle">Estamos en Tudela para cuidar de tu salud bucodental</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📍 Ubicación</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🏥</div>
+                        <div>
+                            <strong>Clínica Dental Sonrisalud</strong><br>
+                            Tudela, Navarra
+                        </div>
+                    </div>
+                    <h3>📞 Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">☎️</div>
+                        <div>
+                            <a href="tel:+34948147229"><strong>948 14 72 29</strong></a><br>
+                            <small>Llámanos para tu cita gratuita</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🌐</div>
+                        <div>
+                            <a href="http://www.sonrisalud.es/" target="_blank">www.sonrisalud.es</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Tudela,&output=embed" width="100%" height="350" style="border:0" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="tel:+34948147229" class="cta-float" title="Llamar ahora">☎</a>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Clínica Dental Sonrisalud Tudela · Tudela, Navarra · <a href="tel:+34948147229">948 14 72 29</a></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Web creada por <a href="https://automatizar.net" target="_blank">Automatizar.net</a></p>
+        </div>
+    </footer>
+</body>
+</html>
