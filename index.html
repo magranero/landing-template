@@ -1,1 +1,776 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia Viajes | Expertos en Viajes a Australia y Nueva Zelanda desde Madrid</title>
+    <meta name="description" content="Especialistas en viajes a medida a Australia y Nueva Zelanda. 30 años de experiencia organizando tu viaje soñado. Paga en 6 o 10 meses sin intereses.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(0, 82, 147, 0.9), rgba(0, 133, 66, 0.85)), 
+                        url('https://backoffice.fijiviajes.com/backoffice/uploads/slider_home/706047943.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 15px;
+            font-weight: 300;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background: #ff8555;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(255, 107, 53, 0.5);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .cta-secondary:hover {
+            background: white;
+            color: #005293;
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 20px;
+            color: #005293;
+            text-align: center;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .about {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .about-card h3 {
+            color: #005293;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .about-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .services {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #005293 0%, #008542 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 82, 147, 0.2);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 82, 147, 0.3);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        
+        .destinations {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .destination-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .destination-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .destination-info {
+            padding: 25px;
+        }
+        
+        .destination-info h3 {
+            color: #005293;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .destination-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-price {
+            color: #ff6b35;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .features {
+            background: white;
+            padding: 60px 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h3 {
+            color: #005293;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .certifications {
+            background: #005293;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .certifications h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .certifications p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .rating {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            text-align: center;
+        }
+        
+        .stars {
+            color: #ffc107;
+            font-size: 2.5rem;
+            margin: 20px 0;
+        }
+        
+        .rating-text {
+            font-size: 1.3rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .contact {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #005293 0%, #008542 100%);
+            padding: 40px;
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+        
+        .contact-item-icon {
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: #005293;
+            transform: scale(1.1);
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            border-radius: 15px;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-info {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-info a:hover {
+            color: #ff6b35;
+        }
+        
+        .footer-credit {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        .footer-credit a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+        
+        .floating-phone {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-phone:hover {
+            transform: scale(1.1);
+            background: #ff8555;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 35px rgba(255, 107, 53, 0.8);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 90vh;
+                min-height: 500px;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            .services-grid,
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-phone {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Australia Viajes</h1>
+            <p class="hero-tagline">La voz de la experiencia</p>
+            <p class="hero-subtitle">30 años organizando viajes a medida a Australia y Nueva Zelanda<br>Especialistas en crear tu viaje soñado sin intermediarios</p>
+            <div>
+                <a href="tel:+34915700583" class="cta-button">Llámanos Ahora</a>
+                <a href="#contacto" class="cta-button cta-secondary">Solicita Presupuesto</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌏</div>
+                    <h3>Especialización</h3>
+                    <p>Expertos en Australia y Nueva Zelanda, viajamos anualmente a los destinos</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Presencia Internacional</h3>
+                    <p>Oficinas en España, Australia y Nueva Zelanda</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h3>Personalización</h3>
+                    <p>Cada persona es única, y por eso tu viaje también lo es</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💳</div>
+                    <h3>Pago Flexible</h3>
+                    <p>Paga tu viaje en 6 o 10 meses sin intereses</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Sin Intermediarios</h3>
+                    <p>Trato directo y personalizado para tu viaje</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Seguridad</h3>
+                    <p>Seguro de asistencia y anulación incluido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <p class="section-intro">
+                Somos especialistas en viajes a medida a Australia y Nueva Zelanda con más de 30 años de experiencia. 
+                Portal español certificado por la oficina de turismo de Australia como agentes AUSSIE SPECIALIST del destino. 
+                Creamos experiencias únicas adaptadas a tus necesidades, sin intermediarios.
+            </p>
+            <div class="about-content">
+                <div class="about-card">
+                    <h3>Viajes Personalizados</h3>
+                    <p>Cada viaje es único. Tú decides cuándo y cómo viajar, y nosotros lo organizamos con la máxima flexibilidad.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Multi-itinerario</h3>
+                    <p>Todas las escalas, destinos y compañías aéreas en un solo billete para máxima comodidad.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Experiencia Garantizada</h3>
+                    <p>30 años de trayectoria organizando viajes inolvidables a Oceanía. Tu tranquilidad es nuestra prioridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p class="section-intro">Descubre todas las opciones que tenemos para crear tu viaje soñado a Australia y Nueva Zelanda</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Viajes a Australia</h3>
+                    <p>Circuitos organizados y paquetes completos para conocer lo mejor de Australia con guías especializados.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Viajes a Nueva Zelanda</h3>
+                    <p>Explora los paisajes más espectaculares del mundo con nuestros circuitos guiados por Nueva Zelanda.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fly & Drive</h3>
+                    <p>Vuelo + coche de alquiler o autocaravana para explorar a tu ritmo Australia y Nueva Zelanda.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Hoteles Seleccionados</h3>
+                    <p>Alojamientos cuidadosamente elegidos en las mejores ubicaciones de Australia y Nueva Zelanda.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Combinados con Islas</h3>
+                    <p>Combina tu viaje con Fiji, Polinesia, Maldivas o Tailandia para una experiencia completa.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Excursiones en Grupos Reducidos</h3>
+                    <p>Actividades y experiencias en grupos pequeños para un trato personalizado y cercano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications">
+        <div class="container">
+            <h3>Agentes Certificados AUSSIE SPECIALIST</h3>
+            <p>Portal español certificado oficialmente por la oficina de turismo de Australia</p>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="container">
+            <h2>Viajes Destacados</h2>
+            <p class="section-intro">Descubre algunos de nuestros viajes más solicitados. Todos son personalizables según tus necesidades.</p>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/440834202.jpg" alt="Australia Clásica" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Australia Clásica</h3>
+                        <p>16 días / 15 noches combinando las principales ciudades y la Gran Barrera de Coral</p>
+                        <div class="destination-price">desde 6.300€</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/880897779.jpg" alt="Escapada a Tasmania" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Escapada a Tasmania</h3>
+                        <p>11 días / 10 noches descubriendo playas de arena blanca y montañas de granito rosa</p>
+                        <div class="destination-price">desde 4.650€</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/264440089.jpg" alt="Explora el Outback" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Explora el Outback</h3>
+                        <p>12 días / 11 noches al corazón de Australia visitando Flinders y Uluru</p>
+                        <div class="destination-price">desde 6.375€</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/27954771.jpg" alt="Luna de Miel" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Luna de Miel Australia y Fiji</h3>
+                        <p>16 días / 15 noches especial para honeymooners con fauna, ciudades y playas paradisíacas</p>
+                        <div class="destination-price">desde 6.530€</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/413174261.jpg" alt="The Ghan" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Aventura en el Outback & The Ghan</h3>
+                        <p>21 días / 20 noches viajando por el outback en el mítico tren de lujo The Ghan</p>
+                        <div class="destination-price">desde 10.900€</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://backoffice.fijiviajes.com/backoffice/uploads/viajes/miniaturas/562580701.jpg" alt="Australia y Polinesia" loading="lazy">
+                    <div class="destination-info">
+                        <h3>Australia y Polinesia</h3>
+                        <p>17 días / 16 noches de vuelta al mundo acabando en la laguna más bonita del planeta</p>
+                        <div class="destination-price">desde 6.990€</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rating">
+        <div class="container">
+            <h2>Opiniones de Nuestros Clientes</h2>
+            <div class="stars">★★★★★</div>
+            <p class="rating-text">5.0 de valoración</p>
+            <p class="section-intro" style="margin-top: 20px;">
+                Nuestros clientes confían en nosotros para organizar sus viajes más especiales. 
+                Tu satisfacción es nuestra mejor carta de presentación.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>Ubicación y Contacto</h2>
+            <p class="section-intro">Visítanos en nuestras oficinas en Madrid o contáctanos para empezar a planificar tu viaje</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📍</span>
+                        <div>
+                            <strong>Dirección:</strong><br>
+                            Pza. San Amaro, 7 Entreplanta<br>
+                            28020 Madrid, España
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📞</span>
+                        <div>
+                            <strong>Teléfonos:</strong><br>
+                            <a href="tel:+34915700583">+34 915 70 05 83</a><br>
+                            <a href="tel:+34619271501">+34 619 27 15 01</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-icon">🌐</span>
+                        <div>
+                            <strong>Web:</strong><br>
+                            <a href="http://australiaviajes.com" target="_blank">www.australiaviajes.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/australiaviaje" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+                        <a href="https://www.instagram.com/australia_viajes/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Plaza+San+Amaro+7+Madrid&output=embed" width="100%" height="450" style="border:0" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <strong>Australia Viajes</strong> · 
+                Pza. San Amaro, 7 Entreplanta, 28020 Madrid · 
+                <a href="tel:+34915700583">+34 915 70 05 83</a>
+            </div>
+            <div class="footer-info">
+                © 2024 Australia Viajes. Todos los derechos reservados.
+            </div>
+            <div class="footer-credit">
+                Web creada por <a href="https://automatizar.net" target="_blank" rel="noopener">Automatizar.net</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+34915700583" class="floating-phone" aria-label="Llamar ahora">📞</a>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Australia Viajes",
+        "image": "https://backoffice.fijiviajes.com/backoffice/uploads/headers/804569374.png",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pza. San Amaro, 7 Entreplanta",
+            "addressLocality": "Madrid",
+            "postalCode": "28020",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34915700583",
+        "url": "http://australiaviajes.com",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "sameAs": [
+            "https://www.facebook.com/australiaviaje",
+            "https://www.instagram.com/australia_viajes/"
+        ],
+        "description": "Especialistas en viajes a medida a Australia y Nueva Zelanda. 30 años de experiencia organizando tu viaje soñado. Agentes certificados AUSSIE SPECIALIST."
+    }
+    </script>
+</body>
+</html>
