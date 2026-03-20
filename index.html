@@ -1,1 +1,619 @@
-<html><head><title>Test Template</title></head><body><h1>Landing sin repos individuales!</h1><p>Funciona con un solo repo template.</p></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marisquería El Yate | Torre del Mar | Alta Cocina Mediterránea</title>
+    <meta name="description" content="Marisquería El Yate en Torre del Mar. Alta cocina mediterránea, pescados y mariscos frescos, asador de carnes. Desde 1994. Premios TripAdvisor y Guía Michelin.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 48, 87, 0.75), rgba(0, 48, 87, 0.75)), url('http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/d5bf7f4c.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            max-width: 700px;
+            padding: 0 20px;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #d4af37;
+            color: #003057;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-primary:hover {
+            background: #f0c654;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #003057;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+        
+        .about {
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #d4af37;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-box h3 {
+            color: #003057;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .awards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        .award-badge {
+            background: linear-gradient(135deg, #d4af37, #f0c654);
+            color: #003057;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #d4af37;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #003057;
+        }
+        
+        .service-card h3 {
+            color: #003057;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .menu-preview {
+            background: linear-gradient(135deg, #003057 0%, #004d7a 100%);
+            color: white;
+        }
+        
+        .menu-preview h2 {
+            color: white;
+        }
+        
+        .menu-preview h2::after {
+            background: #d4af37;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .menu-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .menu-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.05);
+        }
+        
+        .menu-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid #d4af37;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-secondary:hover {
+            background: #d4af37;
+            color: #003057;
+        }
+        
+        .gallery {
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .reviews {
+            background: white;
+            text-align: center;
+        }
+        
+        .stars {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin: 20px 0;
+            letter-spacing: 5px;
+        }
+        
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #003057;
+            margin: 10px 0;
+        }
+        
+        .contact {
+            background: #003057;
+            color: white;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+        
+        .contact-item p,
+        .contact-item a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-item a:hover {
+            color: #d4af37;
+        }
+        
+        .map-container {
+            margin-top: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            background: #d4af37;
+            color: #003057;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 2rem;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+            transition: all 0.3s;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.7);
+        }
+        
+        footer {
+            background: #001829;
+            color: #e0e0e0;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        footer a:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+            
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Marisquería El Yate</h1>
+        <p>Alta cocina mediterránea en Torre del Mar desde 1994</p>
+        <a href="tel:+34952540774" class="cta-primary">Reserva Tu Mesa</a>
+    </div>
+
+    <section class="about">
+        <h2>Sobre Nosotros</h2>
+        <div class="about-content">
+            <p class="about-text">
+                <strong>Marisquería El Yate</strong> se distingue por su alta cocina mediterránea, siendo uno de los restaurantes más importantes de Torre del Mar, situado en la Axarquía, gracias a su buen hacer y su excelente cocina. Ofrecemos una amplia variedad de platos mediterráneos elaborados siempre con productos de temporada, todo ello presentado de forma espectacular para el deleite de nuestros clientes.
+            </p>
+            <p class="about-text">
+                Fundado en 1994 por Rafael y Josefa, hoy en día siguen siendo los herederos los que están al frente del negocio familiar, manteniendo la tradición y excelencia que nos caracteriza.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>🦐 Nuestra Especialidad</h3>
+                <p>Además de pescados y mariscos frescos de alta calidad, El Yate ofrece otros productos que son muy celebrados por nuestros clientes, como las anchoas del Cantábrico, el jamón ibérico o las carnes de maduración, que aquí se cocinan con verdadera maestría en barbacoa de carbón vegetal, como también las deliciosas chuletitas de cordero asadas.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>✨ Experiencia Única</h3>
+                <p>El Yate une a la calidad de sus productos un ambiente familiar, distendido y cordial, sin olvidar por ello la excelencia en el servicio y una cuidadosa y esmerada atención al cliente, complementada con una fantástica relación calidad-precio. Una experiencia gastronómica inolvidable.</p>
+            </div>
+            
+            <div class="awards">
+                <span class="award-badge">⭐ TripAdvisor 2017-2024</span>
+                <span class="award-badge">🍴 Guía Michelin 2019-2021</span>
+                <span class="award-badge">🏆 Premios GURÚ 2020-2022</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🦞</div>
+                <h3>Marisquería</h3>
+                <p>Pescados y mariscos frescos de la más alta calidad. Productos de temporada preparados con maestría mediterránea.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🥩</div>
+                <h3>Asador El Yate</h3>
+                <p>Carnes de maduración a la barbacoa de carbón vegetal. Ambiente exclusivo ideal para reuniones de empresas y eventos privados.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🍷</div>
+                <h3>Bodega Seleccionada</h3>
+                <p>Amplia selección de vinos que complementan a la perfección nuestra carta de platos mediterráneos.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">☀️</div>
+                <h3>Terraza Pet-Friendly</h3>
+                <p>Disfruta en nuestra terraza con tu mascota, además de nuestro salón interior climatizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-preview">
+        <h2>Nuestra Carta</h2>
+        <p style="text-align:center; font-size:1.2rem; margin-top:20px;">Descubre nuestras especialidades</p>
+        
+        <div class="menu-items">
+            <div class="menu-item">
+                <h4>🦐 Mariscos Frescos</h4>
+                <p>Selección diaria del mejor marisco de la costa</p>
+            </div>
+            <div class="menu-item">
+                <h4>🐟 Pescados a la Brasa</h4>
+                <p>Pescados frescos cocinados a la perfección</p>
+            </div>
+            <div class="menu-item">
+                <h4>🥩 Carnes de Maduración</h4>
+                <p>Asadas en barbacoa de carbón vegetal</p>
+            </div>
+            <div class="menu-item">
+                <h4>🍖 Chuletitas de Cordero</h4>
+                <p>Nuestra especialidad más celebrada</p>
+            </div>
+            <div class="menu-item">
+                <h4>🐖 Jamón Ibérico</h4>
+                <p>Cortado al momento para máxima calidad</p>
+            </div>
+            <div class="menu-item">
+                <h4>🐟 Anchoas del Cantábrico</h4>
+                <p>Selección premium de conservas artesanas</p>
+            </div>
+        </div>
+        
+        <div style="text-align:center;">
+            <a href="/carta" class="cta-secondary">Ver Carta Completa →</a>
+            <br>
+            <a href="/qr" class="cta-secondary" style="margin-top:15px;">Descarga nuestro QR para las mesas →</a>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Galería</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/d5bf7f4c.jpg" alt="Terraza de Marisquería El Yate" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/e7f3b213.jpg" alt="Salón del restaurante El Yate" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/3c85d0d1.jpg" alt="Productos frescos de El Yate" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/d7410ca0.jpg" alt="Selección de vinos" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery02/f92aea69.jpg" alt="Profesional cortando jamón" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery02/6609c258.jpg" alt="Salón del asador El Yate" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <div class="stars">★★★★☆</div>
+        <div class="rating-number">4.3</div>
+        <p style="font-size:1.2rem; color:#666;">Valoración media de nuestros clientes</p>
+    </section>
+
+    <section class="contact">
+        <h2>Ubicación y Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <h3>Dirección</h3>
+                <p>C/ Saladero Viejo, 34<br>29740 Torre del Mar, Málaga</p>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <h3>Teléfonos</h3>
+                <p>
+                    <a href="tel:+34952540774">Marisquería: 952 54 07 74</a><br>
+                    <a href="tel:+34952547969">Asador: 952 54 79 69</a>
+                </p>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <h3>Web</h3>
+                <p><a href="http://www.marisqueriaelyate.com/" target="_blank">www.marisqueriaelyate.com</a></p>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=C%2F+Saladero+Viejo%2C+34%2C+Torre+del+Mar%2C+M%C3%A1laga&output=embed" width="100%" height="400" style="border:0" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <div class="floating-cta">
+        <a href="tel:+34952540774" class="floating-btn">📞</a>
+    </div>
+
+    <footer>
+        <p><strong>© 2024 Marisquería El Yate</strong></p>
+        <p>C/ Saladero Viejo, 34, 29740 Torre del Mar, Málaga</p>
+        <p>Marisquería: <a href="tel:+34952540774">952 54 07 74</a> | Asador: <a href="tel:+34952547969">952 54 79 69</a></p>
+        <p style="margin-top:20px;"><a href="https://automatizar.net" target="_blank">Web creada por Automatizar.net</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Marisquería El Yate",
+        "image": "http://www.marisqueriaelyate.com/wp-content/uploads/elyate/images/gallery01/d5bf7f4c.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C/ Saladero Viejo, 34",
+            "addressLocality": "Torre del Mar",
+            "addressRegion": "Málaga",
+            "postalCode": "29740",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34952540774",
+        "servesCuisine": "Mediterránea, Mariscos, Asador",
+        "priceRange": "$$-$$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "bestRating": "5"
+        },
+        "url": "http://www.marisqueriaelyate.com/",
+        "foundingDate": "1994"
+    }
+    </script>
+</body>
+</html>
